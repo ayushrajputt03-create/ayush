@@ -1,5 +1,5 @@
 {
-  "name": "moncy-portfolio",
+  "name": "ayush-singh-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +7,11 @@
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview --host 0.0.0.0"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",

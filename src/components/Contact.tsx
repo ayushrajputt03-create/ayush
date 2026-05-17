@@ -28,6 +28,7 @@ const Contact = () => {
             <a
               href="https://www.linkedin.com/in/ayush-rajput-942aba3b5"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
             >

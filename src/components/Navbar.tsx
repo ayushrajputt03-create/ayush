@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { MouseEvent, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
@@ -7,6 +7,18 @@ import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
+
+const scrollToSection = (section: string | null) => {
+  if (!section) return;
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh(true);
+    if (smoother) {
+      smoother.scrollTo(section, true, "top top");
+    } else {
+      document.querySelector(section)?.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+};
 
 const Navbar = () => {
   useEffect(() => {
@@ -23,24 +35,6 @@ const Navbar = () => {
     smoother.scrollTop(0);
     smoother.paused(true);
 
-    const scrollToSection = (section: string | null) => {
-      if (!section) return;
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh(true);
-        smoother.scrollTo(section, true, "top top");
-      });
-    };
-
-    const handleNavClick = (e: Event) => {
-      e.preventDefault();
-      const link = e.currentTarget as HTMLAnchorElement;
-      const section = link.getAttribute("data-href");
-      if (section) {
-        history.pushState(null, "", section);
-        scrollToSection(section);
-      }
-    };
-
     const handleHashChange = () => {
       scrollToSection(window.location.hash);
     };
@@ -50,10 +44,6 @@ const Navbar = () => {
       scrollToSection(window.location.hash);
     };
 
-    const links = document.querySelectorAll(".header ul a");
-    links.forEach((elem) => {
-      elem.addEventListener("click", handleNavClick);
-    });
     window.addEventListener("hashchange", handleHashChange);
     window.addEventListener("resize", handleResize);
 
@@ -62,14 +52,21 @@ const Navbar = () => {
     }
 
     return () => {
-      links.forEach((elem) => {
-        elem.removeEventListener("click", handleNavClick);
-      });
       window.removeEventListener("hashchange", handleHashChange);
       window.removeEventListener("resize", handleResize);
       smoother.kill();
     };
   }, []);
+
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const section = e.currentTarget.getAttribute("href");
+    if (section) {
+      history.pushState(null, "", section);
+      scrollToSection(section);
+    }
+  };
+
   return (
     <>
       <div className="header">
@@ -85,17 +82,17 @@ const Navbar = () => {
         </a>
         <ul>
           <li>
-            <a data-href="#about" href="#about">
+            <a href="#about" onClick={handleNavClick}>
               <HoverLinks text="ABOUT" />
             </a>
           </li>
           <li>
-            <a data-href="#work" href="#work">
+            <a href="#work" onClick={handleNavClick}>
               <HoverLinks text="WORK" />
             </a>
           </li>
           <li>
-            <a data-href="#contact" href="#contact">
+            <a href="#contact" onClick={handleNavClick}>
               <HoverLinks text="CONTACT" />
             </a>
           </li>
