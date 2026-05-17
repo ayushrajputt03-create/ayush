@@ -1,7 +1,7 @@
 .whatsapp-button {
   position: fixed;
   right: clamp(16px, 3vw, 34px);
-  bottom: clamp(18px, 3vw, 34px);
+  bottom: max(clamp(18px, 3vw, 34px), env(safe-area-inset-bottom));
   z-index: 10000;
   display: inline-flex;
   align-items: center;
@@ -17,6 +17,8 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.2px;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
   transform: translateY(0) scale(1);
   transition: transform 220ms ease, box-shadow 220ms ease,
     background-color 220ms ease;
@@ -53,7 +55,7 @@
 @media only screen and (max-width: 520px) {
   .whatsapp-button {
     right: 14px;
-    bottom: 16px;
+    bottom: max(18px, env(safe-area-inset-bottom));
     min-height: 50px;
     padding: 11px 14px;
     font-size: 13px;
@@ -64,5 +66,34 @@
     width: 28px;
     height: 28px;
     font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .whatsapp-button {
+    width: 52px;
+    height: 52px;
+    min-height: 52px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .whatsapp-button-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+@media (hover: none) {
+  .whatsapp-button:hover {
+    transform: translateY(0) scale(1);
+  }
+
+  .whatsapp-button:active {
+    transform: scale(0.96);
   }
 }
