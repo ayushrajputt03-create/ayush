@@ -7,6 +7,7 @@ import Landing from "./Landing";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
+import WhatsAppButton from "./WhatsAppButton";
 import Work from "./Work";
 import setSplitText from "./utils/splitText";
 
@@ -34,6 +35,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
+      <WhatsAppButton />
       {isDesktopView && children}
       <div id="smooth-wrapper">
         <div id="smooth-content">
