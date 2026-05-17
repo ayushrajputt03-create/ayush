@@ -193,10 +193,12 @@
 }
 .landing-info h3 {
   font-size: 22px;
+  line-height: 1.2;
   letter-spacing: 2px;
   font-weight: 300;
   color: var(--accentColor);
   margin: 0;
+  max-width: min(92vw, 520px);
 }
 .landing-info h2 {
   margin: 0;

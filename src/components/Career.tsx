@@ -15,14 +15,15 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Bachelor's Degree</h4>
-                <h5>Delhi University</h5>
+                <h4>Founder</h4>
+                <h5>NXT Eleveta Media</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Pursuing graduation while building practical skills in digital
-              marketing, branding, content creation, and social media strategy.
+              Building a creative marketing brand focused on social media
+              strategy, local SEO, content creation, web presence, and
+              AI-powered growth ideas for businesses.
             </p>
           </div>
           <div className="career-info-box">
@@ -42,14 +43,14 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Class 12</h4>
-                <h5>Higher Secondary Education</h5>
+                <h4>Bachelor's Degree</h4>
+                <h5>Delhi University</h5>
               </div>
-              <h3>DONE</h3>
+              <h3>NOW</h3>
             </div>
             <p>
-              Completed higher secondary education and continued building a
-              career path in digital marketing, branding, and creative content.
+              Pursuing graduation while building practical skills in digital
+              marketing, branding, content creation, and social media strategy.
             </p>
           </div>
         </div>
