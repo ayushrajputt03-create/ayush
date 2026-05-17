@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Google Business Profile SEO</title>
+  <desc id="desc">Local SEO artwork with map pin, review stars, and search visibility chart.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#082f49"/>
+      <stop offset=".55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#84cc16"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="130" y="150" width="930" height="500" rx="42" fill="#ffffff" opacity=".12" stroke="#ffffff" stroke-opacity=".25"/>
+  <path d="M595 190 C500 190 430 260 430 352 C430 475 595 610 595 610 C595 610 760 475 760 352 C760 260 690 190 595 190 Z" fill="#ef4444"/>
+  <circle cx="595" cy="350" r="72" fill="#ffffff"/>
+  <rect x="190" y="210" width="250" height="72" rx="18" fill="#ffffff" opacity=".9"/>
+  <rect x="220" y="238" width="160" height="18" rx="9" fill="#0f172a"/>
+  <rect x="760" y="215" width="240" height="250" rx="28" fill="#0f172a" opacity=".8"/>
+  <path d="M805 410 L855 350 L900 378 L955 300" fill="none" stroke="#84cc16" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#facc15">
+    <path d="M815 260 l12 25 28 4-20 19 5 27-25-13-25 13 5-27-20-19 28-4z"/>
+    <path d="M880 260 l12 25 28 4-20 19 5 27-25-13-25 13 5-27-20-19 28-4z"/>
+    <path d="M945 260 l12 25 28 4-20 19 5 27-25-13-25 13 5-27-20-19 28-4z"/>
+  </g>
+  <text x="135" y="720" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="700">Local SEO Visibility</text>
+</svg>

@@ -1,0 +1,124 @@
+.contact-section {
+  margin: auto;
+  padding-bottom: 100px;
+  margin-top: 100px;
+}
+.contact-container {
+  width: 100%;
+}
+.contact-section h3 {
+  font-size: 60px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 34px;
+}
+.contact-flex {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.2fr) minmax(220px, 0.8fr) minmax(260px, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+.contact-flex h4 {
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.6;
+}
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.contact-flex p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.contact-flex a {
+  overflow-wrap: anywhere;
+}
+a.contact-social {
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 25px;
+  border-bottom: 1px solid #ccc;
+  margin-top: 10px;
+  padding-bottom: 6px;
+  line-height: 1.2;
+}
+.contact-box h2 {
+  font-weight: 400;
+  font-size: 23px;
+  margin: 0;
+  line-height: 1.25;
+}
+.contact-box h2 > span {
+  color: var(--accentColor);
+}
+.contact-box h5 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  gap: 10px;
+  opacity: 0.5;
+}
+@media only screen and (max-width: 1600px) {
+  .contact-section h3 {
+    font-size: 50px;
+  }
+  .contact-box h2 {
+    font-size: 20px;
+  }
+  a.contact-social {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .contact-section h3 {
+    font-size: 40px;
+  }
+  .contact-box h2 {
+    font-size: 18px;
+  }
+  a.contact-social {
+    font-size: 20px;
+  }
+  .contact-flex p {
+    margin-top: 0px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contact-flex {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .contact-flex p {
+    margin-bottom: 14px;
+  }
+  .contact-flex h4 {
+    margin-top: 14px;
+  }
+  .contact-section {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  .contact-container {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .contact-section h3 {
+    font-size: 34px;
+    margin-bottom: 24px;
+  }
+  a.contact-social {
+    font-size: 18px;
+  }
+  .contact-box h2 {
+    font-size: 17px;
+  }
+}
