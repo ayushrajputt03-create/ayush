@@ -1,5 +1,6 @@
 .section-container {
   width: 1300px;
+  max-width: calc(100% - 48px);
 }
 .title,
 .para {
@@ -22,7 +23,7 @@
 }
 @media only screen and (max-width: 900px) {
   .section-container {
-    width: 500px;
+    width: min(500px, var(--cWidth));
     max-width: var(--cWidth);
   }
 }

@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  align-items: center;
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   justify-content: space-between;
@@ -22,6 +23,38 @@
   column-gap: 40px;
   row-gap: 8px;
   align-items: end;
+}
+.navbar-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(11, 8, 12, 0.72);
+  backdrop-filter: blur(14px);
+  color: #ffffff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.navbar-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+.navbar-toggle-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggle-open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 .header ul li {
   margin-left: 0px;
@@ -59,6 +92,46 @@
   }
   .navbar-title {
     font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .header {
+    width: calc(100% - 28px);
+    padding: 16px 0;
+  }
+  .navbar-toggle {
+    display: inline-flex;
+  }
+  .header ul {
+    position: fixed;
+    top: 68px;
+    right: 0;
+    width: min(260px, calc(100vw - 28px));
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    background: rgba(11, 8, 12, 0.92);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+    align-items: stretch;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .header ul.navbar-menu-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .header ul li {
+    color: #ffffff;
+  }
+  .header ul a {
+    display: flex;
+    padding: 12px 4px;
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 900px) {

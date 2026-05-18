@@ -14,7 +14,9 @@
 }
 .contact-flex {
   display: grid;
-  grid-template-columns: minmax(260px, 1.2fr) minmax(220px, 0.8fr) minmax(260px, 1fr);
+  grid-template-columns:
+    minmax(240px, 1.2fr) minmax(190px, 0.8fr)
+    minmax(240px, 1fr);
   gap: 44px;
   align-items: start;
 }
@@ -104,7 +106,7 @@ a.contact-social {
   }
   .contact-section {
     margin-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 110px;
   }
   .contact-container {
     width: 100%;
@@ -120,5 +122,8 @@ a.contact-social {
   }
   .contact-box h2 {
     font-size: 17px;
+  }
+  .contact-section {
+    padding-bottom: 120px;
   }
 }

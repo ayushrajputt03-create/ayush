@@ -106,8 +106,9 @@ div.resume-button span {
   .resume-button {
     right: auto;
     left: 0;
-    bottom: 18px;
+    bottom: max(18px, env(safe-area-inset-bottom));
     transform: none;
     letter-spacing: 2px;
+    font-size: 14px;
   }
 }

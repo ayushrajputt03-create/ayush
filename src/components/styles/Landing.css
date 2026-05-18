@@ -4,6 +4,7 @@
   margin: auto;
   position: relative;
   height: var(--vh);
+  min-height: 620px;
 }
 .landing-container {
   width: var(--cWidth);
@@ -11,6 +12,10 @@
   height: 100%;
   position: relative;
   max-width: var(--cMaxWidth);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding-top: 84px;
 }
 .landing-circle1 {
   top: 0%;
@@ -294,6 +299,10 @@ h2.landing-info-h2 {
   }
 }
 @media screen and (min-width: 1025px) {
+  .landing-container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-top: 0;
+  }
   .character-model {
     height: 100vh;
     bottom: 0;
@@ -319,6 +328,79 @@ h2.landing-info-h2 {
     transform: translate(0%, -50%);
     right: auto;
     left: 66%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .landing-section {
+    height: auto;
+    min-height: 100svh;
+    padding-bottom: 48px;
+  }
+  .landing-container {
+    min-height: 100svh;
+    align-content: center;
+    gap: 28px;
+  }
+  .landing-intro,
+  .landing-info {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    text-align: left;
+  }
+  .landing-intro {
+    align-self: end;
+  }
+  .landing-info {
+    align-self: start;
+    right: auto;
+    bottom: auto;
+  }
+  .landing-info h3 {
+    max-width: 100%;
+  }
+  .landing-info h2,
+  h2.landing-info-h2 {
+    width: 100%;
+    margin-left: 0;
+  }
+  .character-model {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    height: min(48svh, 430px);
+    order: 2;
+    pointer-events: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .landing-container {
+    gap: 18px;
+  }
+  .landing-intro h2,
+  .landing-info h3 {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+  .landing-intro h1 {
+    font-size: clamp(36px, 12vw, 52px);
+    line-height: 0.95;
+  }
+  .landing-info h2 {
+    font-size: clamp(28px, 9vw, 38px);
+    line-height: 1.05;
+    letter-spacing: 1px;
+  }
+  h2.landing-info-h2 {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+  .landing-circle1,
+  .landing-circle2 {
+    width: 220px;
+    height: 220px;
   }
 }
 @media screen and (min-width: 1200px) {

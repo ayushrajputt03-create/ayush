@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
@@ -21,6 +21,8 @@ const scrollToSection = (section: string | null) => {
 };
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -62,6 +64,7 @@ const Navbar = () => {
     e.preventDefault();
     const section = e.currentTarget.getAttribute("href");
     if (section) {
+      setIsMenuOpen(false);
       history.pushState(null, "", section);
       scrollToSection(section);
     }
@@ -80,7 +83,19 @@ const Navbar = () => {
         >
           ayushrajputt03@gmail.com
         </a>
-        <ul>
+        <button
+          className={`navbar-toggle ${isMenuOpen ? "navbar-toggle-open" : ""}`}
+          type="button"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((value) => !value)}
+          data-cursor="disable"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul className={isMenuOpen ? "navbar-menu-open" : ""}>
           <li>
             <a href="#about" onClick={handleNavClick}>
               <HoverLinks text="ABOUT" />
