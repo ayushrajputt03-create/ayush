@@ -11,7 +11,6 @@ export let smoother: ScrollSmoother;
 const scrollToSection = (section: string | null) => {
   if (!section) return;
   requestAnimationFrame(() => {
-    ScrollTrigger.refresh(true);
     if (smoother) {
       smoother.scrollTo(section, true, "top top");
     } else {
@@ -24,12 +23,18 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const isCompactView =
+      ScrollTrigger.isTouch || window.matchMedia("(max-width: 1024px)").matches;
+
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
+      smooth: prefersReducedMotion ? 0 : isCompactView ? 0.55 : 1.15,
+      speed: isCompactView ? 1 : 1.08,
+      effects: !isCompactView && !prefersReducedMotion,
       autoResize: true,
       ignoreMobileResize: true,
     });
@@ -41,9 +46,16 @@ const Navbar = () => {
       scrollToSection(window.location.hash);
     };
 
+    let resizeFrame = 0;
+
     const handleResize = () => {
-      ScrollSmoother.refresh(true);
-      scrollToSection(window.location.hash);
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => {
+        ScrollSmoother.refresh(true);
+        if (window.location.hash) {
+          scrollToSection(window.location.hash);
+        }
+      });
     };
 
     window.addEventListener("hashchange", handleHashChange);
@@ -56,6 +68,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
       window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(resizeFrame);
       smoother.kill();
     };
   }, []);

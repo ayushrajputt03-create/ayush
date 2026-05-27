@@ -19,16 +19,23 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   );
 
   useEffect(() => {
+    let resizeFrame = 0;
+
     const resizeHandler = () => {
-      setSplitText();
-      setIsDesktopView(window.innerWidth > 1024);
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => {
+        setSplitText();
+        setIsDesktopView(window.innerWidth > 1024);
+      });
     };
+
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
     return () => {
       window.removeEventListener("resize", resizeHandler);
+      cancelAnimationFrame(resizeFrame);
     };
-  }, [isDesktopView]);
+  }, []);
 
   return (
     <div className="container-main">
