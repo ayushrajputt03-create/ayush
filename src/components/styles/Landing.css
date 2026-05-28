@@ -331,12 +331,21 @@ h2.landing-info-h2 {
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1199px) {
+  .character-model {
+    width: min(42vw, 400px);
+    height: 82vh;
+    bottom: 0;
+  }
+
   .landing-intro {
-    right: 63%;
+    left: clamp(44px, 7vw, 82px);
+    right: auto;
   }
 
   .landing-info {
-    left: 63%;
+    left: auto;
+    right: clamp(24px, 4vw, 48px);
+    width: min(25vw, 230px);
   }
 
   .landing-intro h2,
@@ -350,12 +359,12 @@ h2.landing-info-h2 {
   }
 
   .landing-info h2 {
-    font-size: 38px;
-    line-height: 38px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   h2.landing-info-h2 {
-    font-size: 46px;
+    font-size: 35px;
   }
 }
 @media screen and (max-width: 899px) {
