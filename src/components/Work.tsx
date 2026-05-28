@@ -47,48 +47,48 @@ const projects = [
 
 const Work = () => {
   useGSAP(() => {
-  if (window.innerWidth <= 1024) {
-    return;
-  }
+    if (window.innerWidth < 900) {
+      return;
+    }
 
-  let translateX: number = 0;
+    let translateX: number = 0;
 
-  function setTranslateX() {
-    const box = document.getElementsByClassName("work-box");
-    const rectLeft = document
-      .querySelector(".work-container")!
-      .getBoundingClientRect().left;
-    const rect = box[0].getBoundingClientRect();
-    const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-    const padding: number =
-      parseInt(window.getComputedStyle(box[0]).padding) / 2;
-    translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-  }
+    function setTranslateX() {
+      const box = document.getElementsByClassName("work-box");
+      const rectLeft = document
+        .querySelector(".work-container")!
+        .getBoundingClientRect().left;
+      const rect = box[0].getBoundingClientRect();
+      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
+      const padding: number =
+        parseInt(window.getComputedStyle(box[0]).padding) / 2;
+      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+    }
 
-  setTranslateX();
+    setTranslateX();
 
-  const timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".work-section",
-      start: "top top",
-      end: `+=${translateX}`, // Use actual scroll width
-      scrub: true,
-      pin: true,
-      id: "work",
-    },
-  });
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work-section",
+        start: "top top",
+        end: `+=${translateX}`, // Use actual scroll width
+        scrub: true,
+        pin: true,
+        id: "work",
+      },
+    });
 
-  timeline.to(".work-flex", {
-    x: -translateX,
-    ease: "none",
-  });
+    timeline.to(".work-flex", {
+      x: -translateX,
+      ease: "none",
+    });
 
-  // Clean up (optional, good practice)
-  return () => {
-    timeline.kill();
-    ScrollTrigger.getById("work")?.kill();
-  };
-}, []);
+    // Clean up (optional, good practice)
+    return () => {
+      timeline.kill();
+      ScrollTrigger.getById("work")?.kill();
+    };
+  }, []);
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">

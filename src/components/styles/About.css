@@ -45,7 +45,7 @@
     opacity: 1;
   }
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 900px) {
   .about-section {
     width: var(--cWidth);
     justify-content: right;
@@ -63,7 +63,7 @@
     line-height: 2.3vw;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 899px) {
   .about-section {
     padding: 70px 0 40px;
     justify-content: center;

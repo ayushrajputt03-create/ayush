@@ -12,10 +12,11 @@ import Work from "./Work";
 import setSplitText from "./utils/splitText";
 
 const TechStack = lazy(() => import("./TechStack"));
+const DESKTOP_VIEW_MIN_WIDTH = 900;
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
+    window.innerWidth >= DESKTOP_VIEW_MIN_WIDTH
   );
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       cancelAnimationFrame(resizeFrame);
       resizeFrame = requestAnimationFrame(() => {
         setSplitText();
-        setIsDesktopView(window.innerWidth > 1024);
+        setIsDesktopView(window.innerWidth >= DESKTOP_VIEW_MIN_WIDTH);
       });
     };
 

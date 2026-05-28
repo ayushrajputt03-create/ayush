@@ -27,7 +27,7 @@ const Navbar = () => {
       "(prefers-reduced-motion: reduce)"
     ).matches;
     const isCompactView =
-      ScrollTrigger.isTouch || window.matchMedia("(max-width: 1024px)").matches;
+      ScrollTrigger.isTouch || window.matchMedia("(max-width: 899px)").matches;
 
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
