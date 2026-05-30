@@ -14,6 +14,34 @@ const projects = [
     image: "/images/work-digital-marketing.svg",
   },
   {
+    name: "MS Glass Co Website",
+    category: "Business Website",
+    tools: "Website design, business presentation, lead-focused layout",
+    image: "/images/work-social-creatives.svg",
+    link: "https://msglassco.com/",
+  },
+  {
+    name: "Manipal Hospitals Ghaziabad",
+    category: "Healthcare Website",
+    tools: "Hospital landing page, service visibility, location-focused content",
+    image: "/images/work-local-seo.svg",
+    link: "https://www.manipalhospitals.com/ghaziabad/",
+  },
+  {
+    name: "NXT Eleveta Media Website",
+    category: "Agency Website",
+    tools: "Digital marketing agency page, branding, CTA-focused layout",
+    image: "/images/work-digital-marketing.svg",
+    link: "https://acency.vercel.app/nxt-eleveta-media/index.html",
+  },
+  {
+    name: "NXT Eleveta Media Web Page",
+    category: "Agency Landing Page",
+    tools: "Responsive landing page, service showcase, contact flow",
+    image: "/images/work-ai-marketing.svg",
+    link: "https://acency.vercel.app/nxt-eleveta-media/index.htm",
+  },
+  {
     name: "School Admission Campaigns",
     category: "Education Marketing",
     tools: "Admission creatives, parent engagement posts, branding ideas",
@@ -110,7 +138,11 @@ const Work = () => {
                 <h4>Tools and features</h4>
                 <p>{project.tools}</p>
               </div>
-              <WorkImage image={project.image} alt={project.name} />
+              <WorkImage
+                image={project.image}
+                alt={project.name}
+                link={project.link}
+              />
             </div>
           ))}
         </div>

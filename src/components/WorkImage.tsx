@@ -25,11 +25,13 @@ const WorkImage = (props: Props) => {
     <div className="work-image">
       <a
         className="work-image-in"
-        href={props.link}
+        href={props.link || "#work"}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsVideo(false)}
-        target="_blank"
+        target={props.link ? "_blank" : undefined}
+        rel={props.link ? "noreferrer" : undefined}
         data-cursor={"disable"}
+        aria-label={props.link ? `Open ${props.alt}` : props.alt}
       >
         {props.link && (
           <div className="work-link">

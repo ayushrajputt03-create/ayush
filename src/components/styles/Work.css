@@ -122,6 +122,9 @@
 .work-image a:hover .work-link {
   opacity: 1;
 }
+.work-image-in:focus-visible .work-link {
+  opacity: 1;
+}
 .work-image video {
   position: absolute;
   width: 100%;
@@ -256,5 +259,11 @@
   }
   .work-image-in {
     aspect-ratio: 16 / 10;
+  }
+  .work-link {
+    opacity: 1;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
   }
 }
