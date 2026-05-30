@@ -3,6 +3,7 @@ import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { MdArrowOutward } from "react-icons/md";
 
 gsap.registerPlugin(useGSAP);
 
@@ -39,7 +40,7 @@ const projects = [
     category: "Agency Landing Page",
     tools: "Responsive landing page, service showcase, contact flow",
     image: "/images/work-ai-marketing.svg",
-    link: "https://acency.vercel.app/nxt-eleveta-media/index.htm",
+    link: "https://acency.vercel.app/nxt-eleveta-media",
   },
   {
     name: "School Admission Campaigns",
@@ -137,6 +138,17 @@ const Work = () => {
                 </div>
                 <h4>Tools and features</h4>
                 <p>{project.tools}</p>
+                {project.link && (
+                  <a
+                    className="work-visit-link"
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor="disable"
+                  >
+                    Visit Website <MdArrowOutward />
+                  </a>
+                )}
               </div>
               <WorkImage
                 image={project.image}
