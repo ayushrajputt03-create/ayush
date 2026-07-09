@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "schools": {
+      "$schoolId": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "superAdmin": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}
