@@ -27,7 +27,7 @@ const projects = [
     tools:
       "Hospital workflow pages, appointment flow, department visibility, patient trust, responsive healthcare UI",
     image: "/images/work-local-seo.svg",
-    link: "https://www.manipalhospitals.com/ghaziabad/",
+    link: "https://hms-erp-one.vercel.app/",
   },
   {
     name: "School99 ERP",
