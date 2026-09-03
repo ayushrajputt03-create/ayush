@@ -22,11 +22,20 @@ const projects = [
     link: "https://msglassco.com/",
   },
   {
-    name: "Manipal Hospitals Ghaziabad",
-    category: "Healthcare Website",
-    tools: "Hospital landing page, service visibility, location-focused content",
+    name: "Hospital Management ERP",
+    category: "Healthcare ERP Website",
+    tools:
+      "Hospital workflow pages, appointment flow, department visibility, patient trust, responsive healthcare UI",
     image: "/images/work-local-seo.svg",
     link: "https://www.manipalhospitals.com/ghaziabad/",
+  },
+  {
+    name: "School99 ERP",
+    category: "School Management ERP",
+    tools:
+      "School dashboard concept, admissions, student management, admin workflow, modern responsive UI",
+    image: "/images/work-school-campaign.svg",
+    link: "https://northstar-school-os.vercel.app/",
   },
   {
     name: "NXT Eleveta Media Website",
